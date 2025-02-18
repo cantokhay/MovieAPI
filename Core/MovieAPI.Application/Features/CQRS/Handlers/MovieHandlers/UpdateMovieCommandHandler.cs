@@ -13,7 +13,7 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.MovieHandlers
             _context = context;
         }
 
-        public async void Handle(UpdateMovieCommand command)
+        public async Task Handle(UpdateMovieCommand command)
         {
             var entity = await _context.Movies.FindAsync(command.Id);
             entity.DataStatus = DataStatus.Modified;
