@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MovieAPI.Application.Features.CQRS.Commands.MovieCommands;
 using MovieAPI.Application.Features.CQRS.Handlers.MovieHandlers;
 using MovieAPI.Application.Features.CQRS.Queries.MovieQueries;

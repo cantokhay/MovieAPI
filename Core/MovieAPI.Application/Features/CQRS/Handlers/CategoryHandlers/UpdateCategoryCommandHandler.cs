@@ -11,6 +11,7 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.CategoryHandlers
         {
             _context = context;
         }
+
         public async Task Handle(UpdateCategoryCommand command)
         {
             var entity = await _context.Categories.FindAsync(command.Id);

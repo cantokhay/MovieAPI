@@ -16,10 +16,6 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.MovieHandlers
         public async Task Handle(UpdateMovieCommand command)
         {
             var entity = await _context.Movies.FindAsync(command.Id);
-            entity.DataStatus = DataStatus.Modified;
-            entity.CreatedDate = command.CreatedDate;
-            entity.ModifiedDate = DateTime.Now;
-            entity.DeletedDate = null;
             entity.MovieTitle = command.MovieTitle;
             entity.MovieCoverImageURL = command.MovieCoverImageURL;
             entity.MovieRating = command.MovieRating;
@@ -28,6 +24,10 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.MovieHandlers
             entity.MovieReleaseDate = command.MovieReleaseDate;
             entity.MovieReleaseYear = command.MovieReleaseYear;
             entity.MovieStatus = command.MovieStatus;
+            entity.CreatedDate = command.CreatedDate;
+            entity.DataStatus = DataStatus.Modified;
+            entity.ModifiedDate = DateTime.Now;
+            entity.DeletedDate = null;
             await _context.SaveChangesAsync();
         }
     }
