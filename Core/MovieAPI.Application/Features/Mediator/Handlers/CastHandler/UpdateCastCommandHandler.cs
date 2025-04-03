@@ -13,7 +13,7 @@ namespace MovieAPI.Application.Features.Mediator.Handlers.CastHandler
             _context = context;
         }
 
-        public Task Handle(UpdateCastCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateCastCommand request, CancellationToken cancellationToken)
         {
             var entity = _context.Casts.Find(request.Id);
             entity.CastBiography = request.CastBiography;
@@ -26,7 +26,7 @@ namespace MovieAPI.Application.Features.Mediator.Handlers.CastHandler
             entity.DataStatus = Domain.Entities.Enum.DataStatus.Modified;
             entity.ModifiedDate = DateTime.Now;
             entity.DeletedDate = null;
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
     }
 }
