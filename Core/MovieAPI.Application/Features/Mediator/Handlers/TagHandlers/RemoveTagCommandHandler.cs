@@ -17,6 +17,7 @@ namespace MovieAPI.Application.Features.Mediator.Handlers.TagHandlers
         {
             var entity = await _context.Tags.FindAsync(request.Id);
             entity.DataStatus = Domain.Entities.Enum.DataStatus.Deleted;
+            entity.ModifiedDate = DateTime.Now;
             entity.DeletedDate = DateTime.Now;
             await _context.SaveChangesAsync();
         }

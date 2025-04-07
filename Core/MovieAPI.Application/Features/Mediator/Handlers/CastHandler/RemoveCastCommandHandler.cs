@@ -18,6 +18,7 @@ namespace MovieAPI.Application.Features.Mediator.Handlers.CastHandler
         {
             var entity = await _context.Casts.FindAsync(request.Id);
             entity.DataStatus = DataStatus.Deleted;
+            entity.ModifiedDate = DateTime.Now;
             entity.DeletedDate = DateTime.Now;
             await _context.SaveChangesAsync();
         }
