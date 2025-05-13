@@ -7,8 +7,8 @@ namespace MovieAPI.Persistance.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=CAN-TOKHAY-MASA\\CANTOKHAY;initial Catalog=MovieBootcampDB;integrated Security=True;TrustServerCertificate=True;");
-            optionsBuilder.UseSqlServer("Server=DESKTOP-OHO9G30\\SQLEXPRESS;initial Catalog=MovieBootcampDB;integrated Security=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=CAN-TOKHAY-MASA\\CANTOKHAY;initial Catalog=MovieBootcampDB;integrated Security=True;TrustServerCertificate=True;");
+            //optionsBuilder.UseSqlServer("Server=DESKTOP-OHO9G30\\SQLEXPRESS;initial Catalog=MovieBootcampDB;integrated Security=True;TrustServerCertificate=True;");
         }
 
         public DbSet<Cast> Casts { get; set; }
