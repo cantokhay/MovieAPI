@@ -30,5 +30,11 @@ namespace MovieAPI.WebUI.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> MovieDetails(int id) 
+        {
+
+            return View();
+        }
     }
 }
