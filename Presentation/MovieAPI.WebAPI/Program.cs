@@ -28,7 +28,6 @@ builder.Services.AddScoped<RemoveMovieCommandHandler>();
 
 builder.Services.AddScoped<CreateUserRegisterCommandHandler>();
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<MovieContext>();
-    //.AddDefaultTokenProviders();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetTagQueryHandler).Assembly));
 //builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetCastQueryHandler).Assembly));

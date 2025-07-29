@@ -16,7 +16,7 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.UserRegisterHandlers
             _userManager = userManager;
         }
 
-        public async Task Handle(CreateUserRegisterCommand command) 
+        public async Task Handle(CreateUserRegisterCommand command)
         {
             var user = new AppUser()
             {
@@ -25,7 +25,8 @@ namespace MovieAPI.Application.Features.CQRS.Handlers.UserRegisterHandlers
                 UserName = command.UserName,
                 Email = command.Email
             };
-            var result = await _userManager.CreateAsync(user, command.Password);
+            await _userManager.CreateAsync(user, command.Password);
+            await _context.SaveChangesAsync();
             //result ile hata kontrolü yapılabilmesi için bıraktım.
         }
     }

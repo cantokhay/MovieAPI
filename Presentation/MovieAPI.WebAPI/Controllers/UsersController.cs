@@ -7,11 +7,11 @@ namespace MovieAPI.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RegistersController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly CreateUserRegisterCommandHandler _createUserRegisterCommandHandler;
 
-        public RegistersController(CreateUserRegisterCommandHandler createUserRegisterCommandHandler)
+        public UsersController(CreateUserRegisterCommandHandler createUserRegisterCommandHandler)
         {
             _createUserRegisterCommandHandler = createUserRegisterCommandHandler;
         }
