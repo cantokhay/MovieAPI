@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MovieAPI.Domain.Entities.Concrete;
+using MovieAPI.Persistance.Identity;
 
 namespace MovieAPI.Persistance.Context
 {
-    public class MovieContext : DbContext
+    public class MovieContext : IdentityDbContext<AppUser>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
